@@ -1,0 +1,18 @@
+[Unit]
+Description=Fabio is an HTTP and TCP reverse proxy that configures itself with data from Consul.
+Documentation=https://fabiolb.net
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=fabio
+Group=fabio
+LimitNOFILE=65536
+EnvironmentFile=-/etc/sysconfig/fabio
+Restart=on-failure
+ExecStart=/usr/bin/fabio $OPTIONS
+ExecReload=/bin/true
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

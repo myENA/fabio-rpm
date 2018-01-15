@@ -1,0 +1,6 @@
+## This file contains the command line options
+## for the fabio service.  You may specify any option
+## that fabio accepts here.  See `fabio -h` for more information.
+
+## default configuration
+OPTIONS="-cfg /etc/fabio/fabio.properties"
