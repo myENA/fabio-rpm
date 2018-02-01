@@ -13,7 +13,7 @@
 
 Name:           fabio
 Version:        1.5.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
 Group:          System Environment/Daemons
