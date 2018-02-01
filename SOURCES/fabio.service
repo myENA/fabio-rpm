@@ -7,12 +7,22 @@ After=network-online.target
 [Service]
 User=fabio
 Group=fabio
-LimitNOFILE=65536
+WorkingDirectory=/
+LimitMEMLOCK=infinity
+LimitNOFILE=65535
+Type=simple
 EnvironmentFile=-/etc/sysconfig/fabio
-Restart=on-failure
 ExecStart=/usr/bin/fabio $OPTIONS
 ExecReload=/bin/true
+Restart=always
 KillSignal=SIGINT
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=yes
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+NoNewPrivileges=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
 
 [Install]
 WantedBy=multi-user.target
