@@ -13,7 +13,7 @@
 
 Name:           fabio
 Version:        1.5.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
 Group:          System Environment/Daemons
@@ -82,7 +82,7 @@ exit 0
 %files
 %defattr(-,root,root,-)
 %{_unitdir}/%{name}.service
-%caps(cap_net_admin=pe) %{_bindir}/%{name}
+%caps(cap_net_admin=ep) %{_bindir}/%{name}
 
 %files config
 %defattr(0644,root,root,0755)
