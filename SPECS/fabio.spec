@@ -12,8 +12,8 @@
 %define debug_package  %{nil}
 
 Name:           fabio
-Version:        1.5.6
-Release:        3%{?dist}
+Version:        1.5.7
+Release:        0%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
 Group:          System Environment/Daemons
