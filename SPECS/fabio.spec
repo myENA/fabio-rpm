@@ -12,7 +12,7 @@
 %define debug_package  %{nil}
 
 Name:           fabio
-Version:        1.5.7
+Version:        1.5.8
 Release:        0%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
@@ -21,7 +21,7 @@ License:        MIT License
 URL:            https://fabiolb.net
 
 Source0:        https://github.com/fabiolb/%{name}/releases/download/v%{version}/%{name}-%{version}-go%{fabio_gover}-%{fabio_build}
-Source1:        https://github.com/fabiolb/%{name}/blob/v%{version}/%{name}.properties
+Source1:        https://raw.githubusercontent.com/fabiolb/%{name}/v%{version}/%{name}.properties
 Source2:        %{name}.service
 Source3:        %{name}.sysconfig
 
@@ -82,7 +82,7 @@ exit 0
 %files
 %defattr(-,root,root,-)
 %{_unitdir}/%{name}.service
-%caps(cap_net_admin=ep) %{_bindir}/%{name}
+%caps(cap_net_bind_service=+ep) %{_bindir}/%{name}
 
 %files config
 %defattr(0644,root,root,0755)
