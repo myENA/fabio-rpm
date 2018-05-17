@@ -12,7 +12,7 @@
 %define debug_package  %{nil}
 
 Name:           fabio
-Version:        1.5.8
+Version:        1.5.9
 Release:        0%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
