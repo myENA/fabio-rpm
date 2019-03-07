@@ -2,7 +2,8 @@
 %define fabio_user     fabio
 %define fabio_group    %{fabio_user}
 %define fabio_confdir  %{_sysconfdir}/%{name}
-%define fabio_gover    1.11.1
+%define fabio_ver      1.5.11
+%define fabio_gover    1.11.5
 %ifarch %ix86
 %define fabio_build linux_386
 %endif
@@ -12,7 +13,7 @@
 %define debug_package  %{nil}
 
 Name:           fabio
-Version:        1.5.10
+Version:        %{fabio_ver}
 Release:        0%{?dist}
 Summary:        Consul Load-Balancing made simple.
 
