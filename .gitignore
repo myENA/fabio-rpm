@@ -1,6 +1,4 @@
 .vagrant/*
-BUILD/*
-RPMS/*
-SRPMS/*
-SOURCES/*.zip
-artifacts/*.rpm
+artifacts/
+~
+#

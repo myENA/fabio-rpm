@@ -2,8 +2,7 @@
 %define fabio_user     fabio
 %define fabio_group    %{fabio_user}
 %define fabio_confdir  %{_sysconfdir}/%{name}
-%define fabio_ver      1.5.13
-%define fabio_gover    1.13.4
+%define fabio_ver      1.6.0
 %ifarch %ix86
 %define fabio_build linux_386
 %endif
@@ -21,7 +20,7 @@ Group:          System Environment/Daemons
 License:        MIT License
 URL:            https://fabiolb.net
 
-Source0:        https://github.com/fabiolb/%{name}/releases/download/v%{version}/%{name}-%{version}-go%{fabio_gover}-%{fabio_build}
+Source0:        https://github.com/fabiolb/%{name}/releases/download/v%{version}/%{name}-%{version}-%{fabio_build}
 Source1:        https://raw.githubusercontent.com/fabiolb/%{name}/v%{version}/%{name}.properties
 Source2:        %{name}.service
 Source3:        %{name}.sysconfig
@@ -52,12 +51,12 @@ cp -f %{SOURCE0} %{name}
 %install
 
 ## sytem files
-%{__install} -p -D -m 0640 %{SOURCE2} %{buildroot}%{_unitdir}/%{name}.service
+%{__install} -p -D -m 0644 %{SOURCE2} %{buildroot}%{_unitdir}/%{name}.service
 %{__install} -p -D -m 0640 %{SOURCE3} %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 
 ## sample config
-%{__install} -d -m 0750 %{buildroot}%{fabio_confdir}
-%{__install} -p -D -m 0640 %{SOURCE1} %{buildroot}%{fabio_confdir}/%{name}.properties
+%{__install} -d -m 0755 %{buildroot}%{fabio_confdir}
+%{__install} -p -D -m 0644 %{SOURCE1} %{buildroot}%{fabio_confdir}/%{name}.properties
 
 ## main binary
 %{__install} -p -D -m 0755 %{name} %{buildroot}%{_bindir}/%{name}

@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Aaron Hurt <ahurt@ena.com>
+MAINTAINER Nathan Johnson <njohnson@ena.com>
 
 VOLUME ["/tmp/artifacts"]
 
@@ -11,6 +11,6 @@ RUN useradd -s /bin/bash -G adm,wheel,systemd-journal -m builder
 RUN chown -R builder /home/builder
 
 WORKDIR /home/builder
-CMD /tmp/build/build.sh
+CMD /tmp/build/build7.sh
 
 USER builder
