@@ -2,27 +2,14 @@
 
 # Building
 
-The RPMs may be built with [Docker](#with-docker), [Vagrant](#with-vagrant), or [manual](#manual).
+The RPMs may be built with [Docker](#with-docker).
 
 Whatever way you choose you will need to do a few basic things first.
 
 ```bash
 git clone https://github.com/myENA/fabio-rpm  ## check out this code
 cd fabio-rpm                                  ## uhh... you should know
-mkdir -p artifacts                            ## prep the artifacts location
-```
-
-## With Docker
-
-```bash
-docker build -t ena/fabio-rpm .                                ## build the image
-docker run -v $PWD/artifacts:/tmp/artifacts -it ena/fabio-rpm  ## run the image and build the RPMs
-```
-
-## With Vagrant
-
-```bash
-vagrant up                         ## provision and build the RPMs
+./dockerbuilder.sh
 ```
 
 ## Manual
@@ -33,7 +20,7 @@ cat build.sh     ## read the script
 
 ## Result
 
-Five RPMs will be copied to the `artifacts` folder:
+Five RPMs will be copied to the `artifacts` folder in the respective version (7 for centos 7, 8 for alma 8):
 1. `fabio-<version>-<release>.rpm`          - The binary and systemd service definition (required)
 2. `fabio-config-<version>-<release>.rpm`   - Example agent configuration (recommended)
 
