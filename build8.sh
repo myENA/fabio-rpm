@@ -7,6 +7,8 @@ sudo yum groupinstall -y "Development Tools"
 ## install other helpers
 sudo yum install -y epel-release
 
+# sudo dnf install dnf-plugins-core
+
 sudo dnf config-manager --set-enabled powertools
 
 sudo yum upgrade -y
