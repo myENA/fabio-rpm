@@ -2,7 +2,7 @@
 %define fabio_user     fabio
 %define fabio_group    %{fabio_user}
 %define fabio_confdir  %{_sysconfdir}/%{name}
-%define fabio_ver      1.6.2
+%define fabio_ver      1.6.3
 %ifarch %ix86
 %define fabio_build linux_386
 %endif
